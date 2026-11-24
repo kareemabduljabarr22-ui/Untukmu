@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Selamat Ulang Tahun Aja Fitra Ayunda! 🎉</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Plus+Jakarta+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <canvas id="confetti-canvas"></canvas>
+  <audio id="birthday-song" src="lagu.mp3" loop preload="auto"></audio>
+
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+
+  <main class="container">
+    <!-- TAHAP 1: PIN Keypad ala Layar Kunci HP -->
+    <section id="pin-screen" class="card glass screen-active">
+      <span class="badge">📱 Kunci Rahasia</span>
+      <h1 class="title">Masukkan Kode rahasia</h1>
+      <p class="subtitle">
+        Tekan 4 digit angka rahasia untuk membuka kejutan spesial.
+      </p>
+
+      <div id="pin-dots" class="pin-dots" aria-label="Indikator 4 digit PIN">
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+        <span class="pin-dot"></span>
+      </div>
+
+      <p id="pin-error" class="pin-error" role="alert"></p>
+
+      <div class="keypad" role="group" aria-label="Keypad angka PIN">
+        <button class="key-btn" type="button" data-digit="1">1</button>
+        <button class="key-btn" type="button" data-digit="2">2</button>
+        <button class="key-btn" type="button" data-digit="3">3</button>
+        <button class="key-btn" type="button" data-digit="4">4</button>
+        <button class="key-btn" type="button" data-digit="5">5</button>
+        <button class="key-btn" type="button" data-digit="6">6</button>
+        <button class="key-btn" type="button" data-digit="7">7</button>
+        <button class="key-btn" type="button" data-digit="8">8</button>
+        <button class="key-btn" type="button" data-digit="9">9</button>
+        <button id="clear-pin-btn" class="key-btn key-action" type="button" aria-label="Hapus semua PIN">
+          C
+        </button>
+        <button class="key-btn" type="button" data-digit="0">0</button>
+        <button id="backspace-pin-btn" class="key-btn key-action" type="button" aria-label="Hapus satu angka">
+          ⌫
+        </button>
+      </div>
+    </section>
+
+    <!-- TAHAP 2: Kado Besar & Lucu -->
+    <section id="gift-screen" class="card glass screen-hidden">
+      <span class="badge">🎁 Selamat datang tuan putri silahkan membuka kadonya</span>
+      <h1 class="title">Ini Kado dari aku semoga suka yaa!</h1>
+      <p class="subtitle">
+        Kado ini lagi nunggu kamu ketuk—klik aja biar isinya meledak!
+      </p>
+
+      <div id="big-gift" class="gift-stage" role="button" tabindex="0" aria-label="Klik kotak kado besar untuk membuka kejutan">
+        <div class="gift-glow"></div>
+        <div class="gift-sparkles" aria-hidden="true">✨ 💖 🌸</div>
+
+        <div class="gift-lid">
+          <div class="gift-bow-left"></div>
+          <div class="gift-bow-right"></div>
+          <div class="gift-bow-knot"></div>
+        </div>
+
+        <div class="gift-body">
+          <div class="gift-ribbon-v"></div>
+          <div class="gift-face" aria-hidden="true">
+            <span class="gift-eye">•</span>
+            <span class="gift-blush"></span>
+            <span class="gift-mouth">ω</span>
+            <span class="gift-blush"></span>
+            <span class="gift-eye">•</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="hint">Ketuk kadonya sekarang 👆</p>
+    </section>
+
+    <!-- TAHAP 3: Ucapan, Kue, Bubu & Dudu + Lagu -->
+    <section id="greeting-screen" class="card glass screen-hidden">
+      <div class="top-bar">
+        <span class="badge">🎂 HAPPY BIRTHDAY AJA FITRA AYUNDA KE-23 Tahun</span>
+        <div class="top-actions">
+          <button id="replay-btn" class="btn-ghost" type="button" title="Ulangi dari awal">
+            ↺ Ulangi
+          </button>
+        </div>
+      </div>
+
+      <div id="bubu-dudu-stage" class="bubu-dudu-stage" title="Klik Bubu & Dudu untuk kirim cinta!">
+        <div class="character bubu">
+          <div class="ear ear-left"></div>
+          <div class="ear ear-right"></div>
+          <div class="face">
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+            <div class="blush blush-left"></div>
+            <div class="blush blush-right"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+          </div>
+          <span class="char-label">AMA</span>
+        </div>
+
+        <div class="heart-bridge">💖</div>
+
+        <div class="character dudu">
+          <div class="ear ear-left"></div>
+          <div class="ear ear-right"></div>
+          <div class="face">
+            <div class="eye eye-left"></div>
+            <div class="eye eye-right"></div>
+            <div class="blush blush-left"></div>
+            <div class="blush blush-right"></div>
+            <div class="nose"></div>
+            <div class="mouth"></div>
+          </div>
+          <span class="char-label">ABA</span>
+        </div>
+      </div>
+      <p class="bubu-hint">Klik ama &amp; aba biar makin ramai bunga, love &amp; mini beruang! 🐻💕</p>
+
+      <div class="cake-wrapper" id="cake-toggle" title="Klik kue untuk meniup atau menyalakan lilin!">
+        <div class="candle">
+          <div id="flame" class="flame lit"></div>
+        </div>
+        <div class="cake-top"></div>
+        <div class="cake-body"></div>
+        <div class="cake-plate"></div>
+      </div>
+      <p id="cake-hint" class="hint">Klik kue di atas untuk meniup lilinnya!</p>
+
+      <h1 id="recipient-name" class="script-title">Selamat Ulang Tahun Ke-23, Sayangku Aja Fitra Ayunda!</h1>
+
+      <div class="wish-box">
+        <p id="wish-text" class="wish-text">
+          Semoga di usia yang baru ini kamu selalu diberi kesehatan, kebahagiaan yang berlimpah, dan keberanian untuk mewujudkan semua impianmu.
+        </p>
+      </div>
+
+      <div class="actions">
+        <button id="next-wish-btn" class="btn btn-secondary" type="button">
+          ✨ Ganti Ucapan
+        </button>
+        <button id="celebrate-btn" class="btn btn-primary" type="button">
+          🎊 Rayakan Lagi!
+        </button>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
