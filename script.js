@@ -32,10 +32,10 @@ const ctx = canvas ? canvas.getContext("2d") : null;
 const recipientDisplayName = "Sayangku Aja Fitra Ayunda";
 
 const wishes = [
-  "Selamat ulang tahun ke-23, Sayangku Aja Fitra Ayunda! Semoga hari-harimu ke depan penuh kejutan manis, tawa yang tulus, dan hal-hal seru yang bikin kamu selalu semangat.",
-  "Di usia yang baru ini, semoga makin dekat sama semua target dan mimpi yang diam-diam lagi kamu kejar—tanpa lupa istirahat dan jaga diri.",
-  "Cheers to another chapter! Semoga rezekinya lancar, langkahnya dimudahkan, dan selalu dikelilingi orang-orang yang bikin kamu merasa aman dan dihargai.",
-  "Semoga tahun ini membawa banyak cerita yang layak dirayakan: mulai dari pencapaian kecil yang bikin bangga sampai momen spontan yang tak terlupakan."
+  "Selamat ulang tahun ke-23, Sayangku Aja Fitra Ayunda! Semoga di umur yang semakin bertambah, bertambah juga kedewasaannya, rejekinya dan juga kebahagiaannya.",
+  "Di usia yang baru ini, semoga makin dekat sama semua target dan mimpi yang lagi kamu kejar dan kamu impi impikan.",
+  "Dan semoga makin di sayang mamanis, disayang aku, disayang keluarga, disayang ponakan dan semua teman kamu yang masih kamu anggap teman.",
+  "Semoga kita bisa melalui semua ini bersama dan semoga dikedepannya ada kabar baik untuk kita bersama aamiin."
 ];
 
 const floralAndLoveEmojis = ["🌸", "🌷", "🌹", "🌺", "💐", "💖", "💗", "💕", "❤️", "✨"];
